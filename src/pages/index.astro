@@ -1,14 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { ModeToggle } from '@/components/mode-toggle';
+const base = import.meta.env.BASE_URL
 ---
-
-
-
 <Layout title="A-Frame Experiments">
 	<div class="grid place-content-center place-items-center h-full min-h-screen gap-4">
 		<h1 class="text-2xl font-extrabold">A-Frame Experiments</h1>
-		<a href="demo" class="underline w-fit hover:text-indigo-500">Demo</a>
+		<a href=`${base}/demo` class="underline w-fit hover:text-indigo-500">Demo</a>
 		<ModeToggle client:load />
 	</div>
 </Layout>
