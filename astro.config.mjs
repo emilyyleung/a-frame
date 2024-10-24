@@ -7,5 +7,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://emilyyleung.github.io",
+  base: "a-frame",
   integrations: [react(), tailwind({ applyBaseStyles: false })],
 });
