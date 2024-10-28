@@ -1,12 +1,14 @@
 ---
 import Layout from "./Layout.astro"
 const {frontmatter} = Astro.props
+const base = import.meta.env.BASE_URL
 ---
 
 <Layout title={frontmatter.title}>
     <h1>{frontmatter.title}</h1>
     <p>Published on {frontmatter.date}</p>
 
+    <a href={`${base}/blog`}>back</a>
     <hr/>
     
     <slot/>
