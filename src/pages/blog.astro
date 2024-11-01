@@ -1,13 +1,15 @@
 ---
-import BlogPostItem from "@/components/custom/blog-post-item.astro"
+// import BlogPostItem from "@/components/custom/blog-post-item.astro"
 import Layout from "@/layouts/Layout.astro"
 
-const allPosts = await Astro.glob("./blog/*.md")
+// const allPosts = await Astro.glob("./blog/*.md")
 ---
 
+
 <Layout title="A-frame | Blog">
-    <div class="max-w-6xl mx-auto">
+    Coming soon
+    <!-- <div class="max-w-6xl mx-auto">
         <h1>A-Frame Blog</h1>
         {allPosts.map((post) => <BlogPostItem url={post.url} title={post.frontmatter.title}/>)}
-    </div>
+    </div> -->
 </Layout>
