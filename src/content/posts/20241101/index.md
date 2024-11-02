@@ -5,7 +5,7 @@ pubDate: 2024-11-01
 
 Since having found out yesterday that my phone (Pixel 4a) has the photosphere option built into the camera, I thought I'd give that a try.
 
-The experience of taking a photosphere was interesting because you're effectively taking multiple shots of the same location but at different angles. The accuracy of the final output is difficult to get right when you're relying on your own hands to manouvre the camera is the correct angle. I think some form of AI was used to process the image, but it still doesn't produce a picture perfect result.
+The experience of taking a photosphere was interesting because you're effectively taking multiple shots of the same location but at different angles. The accuracy of the final output is difficult to get right when you're relying on your own hands to manouvre the camera in the correct angles relative to the centre. I think some form of AI in the camera was used to process the image, but it still doesn't produce a picture perfect result.
 
 After some research, there are alternative solutions to use in order to create 360 images:
 
