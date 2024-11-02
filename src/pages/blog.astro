@@ -1,26 +1,22 @@
 ---
-// import type { GetStaticPaths } from "astro";
-// import BlogPostItem from "@/components/custom/blog-post-item.astro"
 import Layout from "@/layouts/Layout.astro"
+import { getEntry } from "astro:content"
+import { getCollection } from "astro:content"
 
-// export const getStaticPaths = (async({paginate}) => {
-//     const allPosts: any = await Astro.glob("./blog/*.md")
-    
-//     return paginate(allPosts, {
-//         params: {},
-//         pageSize: 2
-//     })
-// }) satisfies GetStaticPaths;
-
-// const { page } = Astro.props;
-
+const allPosts = await getCollection('posts')
 ---
 
 
 <Layout title="A-frame | Blog">
-    Coming soon...
+    <!-- Coming soon... -->
     <!-- <div class="max-w-6xl mx-auto">
         <h1>A-Frame Blog</h1>
         {allPosts.map((post) => <BlogPostItem url={post.url} title={post.frontmatter.title}/>)}
     </div> -->
+    {allPosts.map(async(post) => {
+        const entry = await getEntry('posts', post.slug)
+        const { Content } = await entry.render()
+        return <div><hr/><div>{post.data.title}</div><Content/></div>
+    })}
 </Layout>
+
