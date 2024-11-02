@@ -6,7 +6,7 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
 
 <AframeLayout title="A-Frame | 04 Interaction">
     <script>
-        AFRAME.registerComponent('foo', {
+        export const FooComponent = AFRAME.registerComponent('foo', {
             schema: {
                 color: {default: '#FFF'},
                 size: {type: 'int', default: 5}
@@ -14,36 +14,12 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
             init: function () {
                 console.log("hello world")
                 console.log(this.data.color, this.data.size)
-                let data = this.data
-                let element = this.el
+                // let data = this.data
+                // let element = this.el
 
-                this.el.addEventListener('click', function(e) {
-
-                    console.log(e.target)
-                    const currentScale = e.target.getAttribute('scale')
-                    console.log(currentScale)
-                    const currentY = currentScale.y
-                    let sky
-                    const sceneEl = document.querySelector('a-scene');
-                    if (sceneEl) {
-                        console.log(sceneEl.querySelector('#sky')?.getAttribute('color'));
-                        sky = sceneEl.querySelector('#sky')
-                    }
-
-                    if (currentY === 2) {
-                        e.target.setAttribute('scale', {x: 1, y:1, z:1})
-                        sky?.setAttribute('color', 'orange')
-                    } else {
-                        e.target.setAttribute('scale', {x: 2, y:2, z:2})
-                        sky?.setAttribute('color', 'purple')
-                    }
-
-                    // const oldPosition = element.getAttribute('position')
+                // this.el.addEventListener('click', function(e: Event) {
                     
-                    // const newY = oldPosition.y + 0.2
-                    // element.setAttribute('position', ['1', newY, '-4'].join(" "))
-                    
-                })
+                // })
             },
             update: function () {},
             tick: function () {
@@ -51,13 +27,31 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
             remove: function () {},
             pause: function () {},
             play: function () {},
-            // events: {
-            //     click: function() {
-            //         console.log('This entity was clicked')
-            //         console.log(this.el)
-            //     }
-            // }
+            events: {
+                click: function() {
+                    console.log('This entity was clicked')
+                    const element = this.el
+                    const currentScale = element.getAttribute('scale')
+                    const currentY = currentScale.y
+
+                    const skyElement = document.querySelector('a-scene > #sky')
+                    if (skyElement && currentY === 2) {
+                        element.setAttribute('scale', { x: 1, y: 1, z: 1 })
+                        skyElement.setAttribute('color', 'purple')
+                    }
+
+                    if (skyElement && currentY === 1) {
+                        element.setAttribute('scale', { x: 2, y: 2, z: 2 })
+                        skyElement.setAttribute('color', 'purple')
+                    }
+                }
+            }
         });
+    declare module "aframe" {
+        export interface Components {
+            "foo": InstanceType<typeof FooComponent>
+        }
+    }
     </script>
     <a-scene>
         <a-entity camera look-controls>
