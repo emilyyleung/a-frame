@@ -1,0 +1,80 @@
+---
+import AframeLayout from "@/layouts/AframeLayout.astro";
+
+
+---
+
+<AframeLayout title="A-Frame | 04 Interaction">
+    <script>
+        AFRAME.registerComponent('foo', {
+            schema: {
+                color: {default: '#FFF'},
+                size: {type: 'int', default: 5}
+            },
+            init: function () {
+                console.log("hello world")
+                console.log(this.data.color, this.data.size)
+                let data = this.data
+                let element = this.el
+
+                this.el.addEventListener('click', function(e) {
+
+                    console.log(e.target)
+                    const currentScale = e.target.getAttribute('scale')
+                    console.log(currentScale)
+                    const currentY = currentScale.y
+                    let sky
+                    const sceneEl = document.querySelector('a-scene');
+                    if (sceneEl) {
+                        console.log(sceneEl.querySelector('#sky')?.getAttribute('color'));
+                        sky = sceneEl.querySelector('#sky')
+                    }
+
+                    if (currentY === 2) {
+                        e.target.setAttribute('scale', {x: 1, y:1, z:1})
+                        sky?.setAttribute('color', 'orange')
+                    } else {
+                        e.target.setAttribute('scale', {x: 2, y:2, z:2})
+                        sky?.setAttribute('color', 'purple')
+                    }
+
+                    // const oldPosition = element.getAttribute('position')
+                    
+                    // const newY = oldPosition.y + 0.2
+                    // element.setAttribute('position', ['1', newY, '-4'].join(" "))
+                    
+                })
+            },
+            update: function () {},
+            tick: function () {
+            },
+            remove: function () {},
+            pause: function () {},
+            play: function () {},
+            // events: {
+            //     click: function() {
+            //         console.log('This entity was clicked')
+            //         console.log(this.el)
+            //     }
+            // }
+        });
+    </script>
+    <a-scene>
+        <a-entity camera look-controls>
+            <a-entity   cursor="fuse: true; fuseTimeout: 500"
+                        position="0 0 -1"
+                        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                        material="color: black; shader: flat">
+            </a-entity>
+        </a-entity>
+
+        <a-box color="#4CC3D9" position="-4 0 -4"></a-box>
+        <a-box color="#EF2D5E" position="0 4 -4"></a-box>
+        <a-box color="#FFC65D" position="4 0 -4"></a-box>
+        <a-box color="#7BC8A4" position="0 -4 -4"></a-box>
+
+        <a-sky id="sky" color="midnightblue"></a-sky>
+
+        <a-entity geometry="primitive:box" material="color:red;" position="1 0 -4" foo="color: red; size: 20"></a-entity>
+    </a-scene>
+</AframeLayout>
