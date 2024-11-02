@@ -17,7 +17,7 @@ So today, after attempting to capture a 360 photo of my balcony (which I didn't 
 
 In the final project, I used this equirectangular [photo by Greg Zaal](https://polyhaven.com/a/rogland_clear_night) on Poly Haven.
 
-![Rogland Clear Night](/public/ref/rogland_clear_night.jpg)
+![Rogland Clear Night](/a-frame/ref/rogland_clear_night.jpg)
 
 To use this image, we need to load it in via the asset manager
 
