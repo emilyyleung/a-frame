@@ -2,8 +2,10 @@
 import Layout from "@/layouts/Layout.astro"
 import { getEntry } from "astro:content"
 import { getCollection } from "astro:content"
+import { format } from 'date-fns'
 
 const allPosts = await getCollection('posts')
+allPosts.sort((a, b) => Number(b.data.pubDate) - Number(a.data.pubDate));
 ---
 
 
@@ -16,7 +18,13 @@ const allPosts = await getCollection('posts')
     {allPosts.map(async(post) => {
         const entry = await getEntry('posts', post.slug)
         const { Content } = await entry.render()
-        return <div><hr/><div>{post.data.title}</div><Content/></div>
+        return (
+            <div>
+                <hr/>
+                <div class="text-muted-foreground">{ format(post.data.pubDate, 'yyyy-MM-dd') }</div>
+                <Content/>
+            </div>
+        )
     })}
 </Layout>
 
