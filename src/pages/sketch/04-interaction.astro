@@ -8,8 +8,8 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
     <script>
         export const FooComponent = AFRAME.registerComponent('foo', {
             schema: {
-                color: {default: '#FFF'},
-                size: {type: 'int', default: 5}
+                color: { default: '#FFF' },
+                size: { type: 'int', default: 5 }
             },
             init: function () {
                 console.log("hello world")
