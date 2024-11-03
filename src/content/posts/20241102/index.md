@@ -53,3 +53,7 @@ These options are set via the cursor element - where fuse set to true enables cl
 Other than that, I was having some troubles with following examples because I had set up Astro to use TypeScript. Luckily there was [a types package for A-Frame](https://www.npmjs.com/package/@types/aframe) as well as [sample code](https://aframe-typescript.dev/reference/component/) I could implement for building custom components.
 
 There's still some work to be done, but you can find project 3 here: [Interaction](/a-frame/sketch/3-interaction)
+
+<video controls width="250">
+  <source src="/a-frame/ref/3-interaction-1.mp4" type="video/mp4">
+</video>
