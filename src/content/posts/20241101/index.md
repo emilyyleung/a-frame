@@ -43,3 +43,7 @@ I found a [Panorama to Cubemap applet](https://jaxry.github.io/panorama-to-cubem
 Also something to note is that iPhones and Safari users will likely need to allow permission for using the orientation of the device. So make sure to use the [device-orientation-permission-ui](https://aframe.io/docs/1.6.0/components/device-orientation-permission-ui.html). Note: I have yet to test whether this works
 
 You can find project 2 here: [Skybox 1](/a-frame/sketch/2-skybox-1)
+
+<video controls width="250">
+  <source src="/a-frame/ref/2-skybox-1.mp4" type="video/mp4">
+</video>
