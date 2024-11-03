@@ -1,0 +1,20 @@
+---
+import AframeLayout from "@/layouts/AframeLayout.astro";
+
+// Equirectangular photo by Greg Zaal on Poly Haven
+// https://polyhaven.com/a/rogland_clear_night
+---
+
+
+<AframeLayout title="A-Frame | 04 Skybox">
+    <a-scene device-orientation-permission-ui="enabled: true" loading-screen="dotsColor: red; backgroundColor: black">
+        <a-assets>
+            <img id="photosphere" src="/a-frame/ref/rogland_clear_night.jpg">
+        </a-assets>
+
+        <a-entity camera look-controls></a-entity>
+
+        <a-sky src="#photosphere"></a-sky>
+
+    </a-scene>
+</AframeLayout>

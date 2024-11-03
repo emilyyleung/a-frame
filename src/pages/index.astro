@@ -1,25 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const sketches = [{
-	slug: "01-hello-world",
-	name: "01 - Hello World"
-},{
-	slug: '02-panorama',
-	name: '02 - Panorama'
-}, {
-	slug: '03-skybox',
-	name: '03 - Skybox'
-}, {
-	slug: '04-interaction',
-	name: '04 - Interaction'
-}]
 ---
 <Layout title="A-Frame Experiments">
 	<div class="grid">
 		<h1>A-Frame Experiments</h1>
 		<ul>
-			{sketches.map((sketch) => <li><a href={`/a-frame/sketch/${sketch.slug}`}>{sketch.name}</a></li>)}
+			<li>
+				<a href="/a-frame/sketch/0-demo">Hello World</a>
+			</li>
+			<li>
+				<a href="/a-frame/sketch/1-panorama">Panorama</a>
+			</li>
+			<li>
+				Skybox
+				<ul>
+					<li>
+						<a href="/a-frame/sketch/2-skybox-1">Night Sky</a>
+					</li>
+					<li>
+						<a href="/a-frame/sketch/2-skybox-2">Basketball Court</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/a-frame/sketch/3-interaction">[WIP] Interaction</a>
+			</li>
 		</ul>
 	</div>
 </Layout>

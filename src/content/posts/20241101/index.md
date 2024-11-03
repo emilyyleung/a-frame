@@ -1,5 +1,4 @@
 ---
-title: "Hello World"
 pubDate: 2024-11-01
 ---
 
@@ -13,7 +12,7 @@ After some research, there are alternative solutions to use in order to create 3
 - Stabilizing arm such as the "Insta360 Flow"
 - Built-in photosphere camera (some phones have this feature)
 
-So today, after attempting to capture a 360 photo of my balcony (which I didn't end up publishing) - I worked on the second project in the series: [03 Skybox](/a-frame/sketch/03-skybox)
+So today, after attempting to capture a 360 photo of my balcony (which I didn't end up publishing) - I worked on the second project in the series: [Skybox](/a-frame/sketch/2-skybox-1)
 
 In the final project, I used this equirectangular [photo by Greg Zaal](https://polyhaven.com/a/rogland_clear_night) on Poly Haven.
 
@@ -43,4 +42,4 @@ I found a [Panorama to Cubemap applet](https://jaxry.github.io/panorama-to-cubem
 
 Also something to note is that iPhones and Safari users will likely need to allow permission for using the orientation of the device. So make sure to use the [device-orientation-permission-ui](https://aframe.io/docs/1.6.0/components/device-orientation-permission-ui.html). Note: I have yet to test whether this works
 
-You can find project 3 here: [03 Skybox](/a-frame/sketch/04-interaction)
+You can find project 2 here: [Skybox 1](/a-frame/sketch/2-skybox-1)
