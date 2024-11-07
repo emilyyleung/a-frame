@@ -27,4 +27,4 @@ It was as easy as extracting the current colour of the element that was hovered 
   <source src="/a-frame/ref/3-interaction-2.mp4" type="video/mp4">
 </video>
 
-You can find the colour-changing interaction here: [Interaction](/a-frame/sketch/3-interaction)
+You can find the colour-changing interaction here: [Interaction - Colour Change](/a-frame/sketch/3-interaction-1)

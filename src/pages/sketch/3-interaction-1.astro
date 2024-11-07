@@ -4,7 +4,7 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
 
 ---
 
-<AframeLayout title="A-Frame | 3 Interaction">
+<AframeLayout title="A-Frame | 3 Interaction - Colour Change">
     <script>
         export const FooComponent = AFRAME.registerComponent('foo', {
             schema: {
@@ -12,8 +12,8 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
                 size: { type: 'int', default: 5 }
             },
             init: function () {
-                console.log("hello world")
-                console.log(this.data.color, this.data.size)
+                // console.log("hello world")
+                // console.log(this.data.color, this.data.size)
                 // let data = this.data
                 // let element = this.el
 
@@ -68,6 +68,13 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
     }
     </script>
     <a-scene>
+        <a-assets>
+            <a-mixin id="myshape" geometry="primitive:box"></a-mixin>
+            <a-mixin id="blue" material="color:#4CC3D9"></a-mixin>
+            <a-mixin id="red" material="color:#EF2D5E"></a-mixin>
+            <a-mixin id="yellow" material="color:#FFC65D"></a-mixin>
+            <a-mixin id="green" material="color:#7BC8A4"></a-mixin>
+        </a-assets>
         <a-entity camera look-controls>
             <a-entity   cursor="fuse: true; fuseTimeout: 500"
                         position="0 0 -1"
@@ -76,10 +83,10 @@ import AframeLayout from "@/layouts/AframeLayout.astro";
             </a-entity>
         </a-entity>
 
-        <a-entity foo geometry="primitive:box" material="color:#4CC3D9" position="-2 0 -3"></a-entity>
-        <a-entity foo geometry="primitive:box" material="color:#EF2D5E" position="0 2 -3"></a-entity>
-        <a-entity foo geometry="primitive:box" material="color:#FFC65D" position="2 0 -3"></a-entity>
-        <a-entity foo geometry="primitive:box" material="color:#7BC8A4" position="0 -2 -3"></a-entity>
+        <a-entity foo mixin="myshape blue" position="-2 0 -3"></a-entity>
+        <a-entity foo mixin="myshape red" position="0 2 -3"></a-entity>
+        <a-entity foo mixin="myshape yellow" position="2 0 -3"></a-entity>
+        <a-entity foo mixin="myshape green" position="0 -2 -3"></a-entity>
 
         <a-sky id="sky" color="midnightblue"></a-sky>
     </a-scene>
